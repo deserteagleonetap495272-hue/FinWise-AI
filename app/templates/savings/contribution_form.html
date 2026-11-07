@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}{{ heading }} | FinWise AI{% endblock %}
+{% block content %}
+<a class="small" href="{{ url_for('savings.contributions', goal_id=goal.id) }}">← Back to contributions</a>
+<section class="auth-card transaction-form-card mx-auto p-4 p-md-5 rounded-4 mt-3"><p class="eyebrow">{{ goal.name|e }}</p><h1 class="h2 mb-4">{{ heading }}</h1>
+<form method="post" novalidate>{{ form.hidden_tag() }}
+  <div class="mb-3">{{ form.amount.label(class_="form-label") }}{{ form.amount(class_="form-control" + (" is-invalid" if form.amount.errors else ""), type="number", step="0.01", min="0.01") }}{% for error in form.amount.errors %}<div class="invalid-feedback">{{ error }}</div>{% endfor %}</div>
+  <div class="mb-3">{{ form.contributed_on.label(class_="form-label") }}{{ form.contributed_on(class_="form-control" + (" is-invalid" if form.contributed_on.errors else ""), type="date") }}{% for error in form.contributed_on.errors %}<div class="invalid-feedback">{{ error }}</div>{% endfor %}</div>
+  <div class="mb-4">{{ form.note.label(class_="form-label") }}{{ form.note(class_="form-control", maxlength="500") }}</div>
+  {{ form.submit(class_="btn btn-success w-100 py-2") }}
+</form></section>
+{% endblock %}

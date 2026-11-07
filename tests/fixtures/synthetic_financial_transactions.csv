@@ -1,0 +1,482 @@
+id,user_key,transaction_date,transaction_type,category,category_type,amount,description
+1,primary,2024-01-01,expense,Rent,expense,18000.00,monthly apartment rent transfer
+2,scenario,2024-01-01,expense,Fixed expenses,expense,20000.00,synthetic monthly fixed household costs
+3,secondary,2024-01-01,income,Internship stipend,income,32000.00,monthly internship stipend credit
+4,secondary,2024-01-01,expense,Rent,expense,11000.00,monthly apartment rent transfer
+5,primary,2024-01-04,expense,Utilities,expense,2142.64,electricity bill payment
+6,secondary,2024-01-04,expense,Utilities,expense,1330.29,home broadband and power bill
+7,primary,2024-01-05,expense,Education,expense,3500.00,certification learning platform fee
+8,secondary,2024-01-05,expense,Education,expense,2500.00,online course tuition payment
+9,primary,2024-01-08,expense,Groceries,expense,9333.45,grocery supermarket household staples
+10,secondary,2024-01-09,expense,Groceries,expense,6722.37,fresh produce and staples market
+11,primary,2024-01-15,expense,Food delivery,expense,2923.90,quick service food app order
+12,scenario,2024-01-15,expense,Variable expenses,expense,10000.00,synthetic monthly discretionary costs
+13,secondary,2024-01-15,expense,Food delivery,expense,1626.41,quick service food app order
+14,primary,2024-01-18,expense,Healthcare,expense,2007.21,pharmacy prescription medicine
+15,primary,2024-01-20,expense,Transportation,expense,2213.77,bus and auto ride commute
+16,secondary,2024-01-20,expense,Transportation,expense,1724.39,metro card recharge commute
+17,secondary,2024-01-23,expense,Entertainment,expense,1489.06,weekend event entertainment
+18,primary,2024-01-25,expense,Shopping,expense,4478.40,electronics store shopping
+19,primary,2024-01-31,income,Salary,income,50000.00,monthly salary payroll credit
+20,primary,2024-01-31,expense,Entertainment,expense,1482.18,weekend event entertainment
+21,scenario,2024-01-31,income,Salary,income,50000.00,synthetic monthly salary scenario
+22,primary,2024-02-01,expense,Rent,expense,18000.00,monthly apartment rent transfer
+23,scenario,2024-02-01,expense,Fixed expenses,expense,20000.00,synthetic monthly fixed household costs
+24,secondary,2024-02-01,income,Internship stipend,income,32000.00,training stipend deposit
+25,secondary,2024-02-01,expense,Rent,expense,11000.00,apartment lease rent payment
+26,primary,2024-02-04,expense,Utilities,expense,2563.16,electricity bill payment
+27,secondary,2024-02-04,expense,Utilities,expense,1314.48,electricity bill payment
+28,primary,2024-02-05,expense,Education,expense,3500.00,certification learning platform fee
+29,secondary,2024-02-05,expense,Education,expense,2500.00,online course tuition payment
+30,primary,2024-02-08,expense,Groceries,expense,6029.52,grocery supermarket household staples
+31,secondary,2024-02-09,expense,Groceries,expense,6376.17,grocery supermarket household staples
+32,primary,2024-02-15,expense,Food delivery,expense,2249.60,food delivery dinner order
+33,scenario,2024-02-15,expense,Variable expenses,expense,10000.00,synthetic monthly discretionary costs
+34,secondary,2024-02-15,expense,Food delivery,expense,1062.00,restaurant takeaway meal order
+35,secondary,2024-02-18,expense,Healthcare,expense,455.07,pharmacy prescription medicine
+36,primary,2024-02-20,expense,Transportation,expense,1403.31,local train and cab fare
+37,secondary,2024-02-20,expense,Transportation,expense,1956.67,local train and cab fare
+38,secondary,2024-02-23,expense,Entertainment,expense,975.08,weekend event entertainment
+39,primary,2024-02-26,income,Freelancing,income,6088.13,contract writing invoice credit
+40,primary,2024-02-29,income,Salary,income,50000.00,employer salary deposit
+41,primary,2024-02-29,expense,Entertainment,expense,2095.94,music and movie subscription
+42,scenario,2024-02-29,income,Salary,income,50000.00,synthetic monthly salary scenario
+43,primary,2024-03-01,expense,Rent,expense,18000.00,home rental payment to landlord
+44,scenario,2024-03-01,expense,Fixed expenses,expense,20000.00,synthetic monthly fixed household costs
+45,secondary,2024-03-01,income,Internship stipend,income,32000.00,intern program payment
+46,secondary,2024-03-01,expense,Rent,expense,11000.00,apartment lease rent payment
+47,primary,2024-03-04,expense,Utilities,expense,2083.52,electricity bill payment
+48,secondary,2024-03-04,expense,Utilities,expense,1444.71,electricity bill payment
+49,primary,2024-03-05,expense,Education,expense,3500.00,online course tuition payment
+50,secondary,2024-03-05,expense,Education,expense,2500.00,college class fee installment
+51,primary,2024-03-08,expense,Groceries,expense,8869.34,fresh produce and staples market
+52,secondary,2024-03-09,expense,Groceries,expense,6762.65,fresh produce and staples market
+53,primary,2024-03-15,expense,Food delivery,expense,2242.11,restaurant takeaway meal order
+54,scenario,2024-03-15,expense,Variable expenses,expense,10000.00,synthetic monthly discretionary costs
+55,secondary,2024-03-15,expense,Food delivery,expense,593.83,quick service food app order
+56,primary,2024-03-18,expense,Healthcare,expense,709.81,healthcare diagnostic test payment
+57,primary,2024-03-20,expense,Transportation,expense,1500.29,local train and cab fare
+58,secondary,2024-03-20,expense,Transportation,expense,1947.35,bus and auto ride commute
+59,secondary,2024-03-23,expense,Entertainment,expense,657.82,weekend event entertainment
+60,secondary,2024-03-24,income,Freelancing,income,2556.18,freelance design project payment
+61,primary,2024-03-27,expense,Travel,expense,13351.69,hotel and transport trip expense
+62,primary,2024-03-28,expense,Bank charges,expense,16.23,payment transaction service charge
+63,primary,2024-03-31,income,Salary,income,50000.00,monthly payroll transfer
+64,primary,2024-03-31,expense,Entertainment,expense,1068.53,cinema tickets and streaming
+65,scenario,2024-03-31,income,Salary,income,50000.00,synthetic monthly salary scenario
+66,primary,2024-04-01,expense,Rent,expense,18000.00,home rental payment to landlord
+67,scenario,2024-04-01,expense,Fixed expenses,expense,20000.00,synthetic monthly fixed household costs
+68,secondary,2024-04-01,income,Internship stipend,income,32000.00,monthly internship stipend credit
+69,secondary,2024-04-01,expense,Rent,expense,11000.00,monthly apartment rent transfer
+70,primary,2024-04-04,expense,Utilities,expense,3012.08,internet and electricity bill
+71,secondary,2024-04-04,expense,Utilities,expense,2042.28,home broadband and power bill
+72,primary,2024-04-05,expense,Education,expense,3500.00,certification learning platform fee
+73,secondary,2024-04-05,expense,Education,expense,2500.00,college class fee installment
+74,primary,2024-04-08,expense,Groceries,expense,9342.80,fresh produce and staples market
+75,secondary,2024-04-09,expense,Groceries,expense,6256.00,grocery supermarket household staples
+76,primary,2024-04-15,expense,Food delivery,expense,1216.22,food delivery dinner order
+77,scenario,2024-04-15,expense,Variable expenses,expense,10000.00,synthetic monthly discretionary costs
+78,secondary,2024-04-15,expense,Food delivery,expense,1031.47,food delivery dinner order
+79,primary,2024-04-20,expense,Transportation,expense,2944.29,local train and cab fare
+80,secondary,2024-04-20,expense,Transportation,expense,1034.99,local train and cab fare
+81,secondary,2024-04-23,expense,Entertainment,expense,1472.43,weekend event entertainment
+82,primary,2024-04-25,expense,Shopping,expense,7776.18,online retail purchase
+83,secondary,2024-04-25,expense,Shopping,expense,2648.52,online retail purchase
+84,primary,2024-04-26,income,Freelancing,income,7240.84,freelance design project payment
+85,primary,2024-04-30,income,Salary,income,50000.00,monthly salary payroll credit
+86,primary,2024-04-30,expense,Entertainment,expense,1784.42,cinema tickets and streaming
+87,scenario,2024-04-30,income,Salary,income,50000.00,synthetic monthly salary scenario
+88,primary,2024-05-01,expense,Rent,expense,18000.00,apartment lease rent payment
+89,scenario,2024-05-01,expense,Fixed expenses,expense,20000.00,synthetic monthly fixed household costs
+90,secondary,2024-05-01,income,Internship stipend,income,32000.00,training stipend deposit
+91,secondary,2024-05-01,expense,Rent,expense,11000.00,home rental payment to landlord
+92,primary,2024-05-04,expense,Utilities,expense,2826.93,electricity bill payment
+93,secondary,2024-05-04,expense,Utilities,expense,1157.12,electricity bill payment
+94,primary,2024-05-05,expense,Education,expense,3500.00,certification learning platform fee
+95,secondary,2024-05-05,expense,Education,expense,2500.00,online course tuition payment
+96,primary,2024-05-08,expense,Groceries,expense,8848.27,weekly vegetables and pantry shopping
+97,secondary,2024-05-09,expense,Groceries,expense,4733.91,fresh produce and staples market
+98,primary,2024-05-15,expense,Food delivery,expense,1897.71,restaurant takeaway meal order
+99,scenario,2024-05-15,expense,Variable expenses,expense,10000.00,synthetic monthly discretionary costs
+100,secondary,2024-05-15,expense,Food delivery,expense,1744.26,food delivery dinner order
+101,primary,2024-05-18,expense,Healthcare,expense,587.33,healthcare diagnostic test payment
+102,primary,2024-05-20,expense,Transportation,expense,2252.41,metro card recharge commute
+103,secondary,2024-05-20,expense,Transportation,expense,1617.65,metro card recharge commute
+104,secondary,2024-05-23,expense,Entertainment,expense,1567.51,cinema tickets and streaming
+105,primary,2024-05-31,income,Salary,income,50000.00,employer salary deposit
+106,primary,2024-05-31,expense,Entertainment,expense,872.37,weekend event entertainment
+107,scenario,2024-05-31,income,Salary,income,50000.00,synthetic monthly salary scenario
+108,primary,2024-06-01,expense,Rent,expense,18000.00,home rental payment to landlord
+109,scenario,2024-06-01,expense,Fixed expenses,expense,20000.00,synthetic monthly fixed household costs
+110,secondary,2024-06-01,income,Internship stipend,income,32000.00,intern program payment
+111,secondary,2024-06-01,expense,Rent,expense,11000.00,apartment lease rent payment
+112,primary,2024-06-04,expense,Utilities,expense,3150.07,electricity bill payment
+113,secondary,2024-06-04,expense,Utilities,expense,1357.73,electricity bill payment
+114,primary,2024-06-05,expense,Education,expense,3500.00,online course tuition payment
+115,secondary,2024-06-05,expense,Education,expense,2500.00,certification learning platform fee
+116,primary,2024-06-08,expense,Groceries,expense,9278.88,weekly vegetables and pantry shopping
+117,secondary,2024-06-09,expense,Groceries,expense,6872.34,weekly vegetables and pantry shopping
+118,primary,2024-06-15,expense,Food delivery,expense,2886.19,quick service food app order
+119,scenario,2024-06-15,expense,Variable expenses,expense,10000.00,synthetic monthly discretionary costs
+120,secondary,2024-06-15,expense,Food delivery,expense,1507.52,quick service food app order
+121,secondary,2024-06-18,expense,Healthcare,expense,493.00,pharmacy prescription medicine
+122,primary,2024-06-20,expense,Transportation,expense,3058.30,metro card recharge commute
+123,secondary,2024-06-20,expense,Transportation,expense,1741.88,local train and cab fare
+124,secondary,2024-06-23,expense,Entertainment,expense,629.39,music and movie subscription
+125,secondary,2024-06-24,income,Freelancing,income,8593.01,freelance design project payment
+126,primary,2024-06-26,income,Freelancing,income,7226.13,independent consulting fee
+127,primary,2024-06-30,income,Salary,income,50000.00,monthly payroll transfer
+128,primary,2024-06-30,expense,Entertainment,expense,1626.08,music and movie subscription
+129,scenario,2024-06-30,income,Salary,income,50000.00,synthetic monthly salary scenario
+130,primary,2024-07-01,expense,Rent,expense,18000.00,apartment lease rent payment
+131,scenario,2024-07-01,expense,Fixed expenses,expense,20000.00,synthetic monthly fixed household costs
+132,secondary,2024-07-01,income,Internship stipend,income,32000.00,monthly internship stipend credit
+133,secondary,2024-07-01,expense,Rent,expense,11000.00,monthly apartment rent transfer
+134,primary,2024-07-04,expense,Utilities,expense,3254.80,home broadband and power bill
+135,secondary,2024-07-04,expense,Utilities,expense,1786.25,home broadband and power bill
+136,primary,2024-07-05,expense,Education,expense,3500.00,college class fee installment
+137,secondary,2024-07-05,expense,Education,expense,2500.00,online course tuition payment
+138,primary,2024-07-08,expense,Groceries,expense,7195.66,grocery supermarket household staples
+139,secondary,2024-07-09,expense,Groceries,expense,6754.26,grocery supermarket household staples
+140,primary,2024-07-15,expense,Food delivery,expense,1231.94,food delivery dinner order
+141,scenario,2024-07-15,expense,Variable expenses,expense,10000.00,synthetic monthly discretionary costs
+142,secondary,2024-07-15,expense,Food delivery,expense,460.17,quick service food app order
+143,primary,2024-07-18,expense,Healthcare,expense,1146.94,pharmacy prescription medicine
+144,primary,2024-07-20,expense,Transportation,expense,2574.71,metro card recharge commute
+145,secondary,2024-07-20,expense,Transportation,expense,1030.75,local train and cab fare
+146,secondary,2024-07-23,expense,Entertainment,expense,455.56,weekend event entertainment
+147,primary,2024-07-25,expense,Shopping,expense,6772.52,online retail purchase
+148,primary,2024-07-31,income,Salary,income,50000.00,monthly salary payroll credit
+149,primary,2024-07-31,expense,Entertainment,expense,2288.98,cinema tickets and streaming
+150,scenario,2024-07-31,income,Salary,income,50000.00,synthetic monthly salary scenario
+151,primary,2024-08-01,expense,Rent,expense,18000.00,home rental payment to landlord
+152,scenario,2024-08-01,expense,Fixed expenses,expense,20000.00,synthetic monthly fixed household costs
+153,secondary,2024-08-01,income,Internship stipend,income,32000.00,training stipend deposit
+154,secondary,2024-08-01,expense,Rent,expense,11000.00,monthly apartment rent transfer
+155,primary,2024-08-04,expense,Utilities,expense,3865.89,internet and electricity bill
+156,secondary,2024-08-04,expense,Utilities,expense,2039.40,electricity bill payment
+157,primary,2024-08-05,expense,Education,expense,3500.00,certification learning platform fee
+158,secondary,2024-08-05,expense,Education,expense,2500.00,online course tuition payment
+159,primary,2024-08-08,expense,Groceries,expense,6463.31,grocery supermarket household staples
+160,secondary,2024-08-09,expense,Groceries,expense,6544.32,fresh produce and staples market
+161,primary,2024-08-15,expense,Food delivery,expense,2742.75,restaurant takeaway meal order
+162,scenario,2024-08-15,expense,Variable expenses,expense,10000.00,synthetic monthly discretionary costs
+163,secondary,2024-08-15,expense,Food delivery,expense,696.11,quick service food app order
+164,primary,2024-08-20,expense,Transportation,expense,3236.56,local train and cab fare
+165,secondary,2024-08-20,expense,Transportation,expense,2045.48,metro card recharge commute
+166,secondary,2024-08-23,expense,Entertainment,expense,1038.94,weekend event entertainment
+167,secondary,2024-08-25,expense,Shopping,expense,3047.77,clothing and household shopping
+168,primary,2024-08-26,income,Freelancing,income,5516.39,contract writing invoice credit
+169,primary,2024-08-31,income,Salary,income,50000.00,employer salary deposit
+170,primary,2024-08-31,expense,Entertainment,expense,2802.73,music and movie subscription
+171,scenario,2024-08-31,income,Salary,income,50000.00,synthetic monthly salary scenario
+172,primary,2024-09-01,expense,Rent,expense,18000.00,home rental payment to landlord
+173,scenario,2024-09-01,expense,Fixed expenses,expense,20000.00,synthetic monthly fixed household costs
+174,secondary,2024-09-01,income,Internship stipend,income,32000.00,intern program payment
+175,secondary,2024-09-01,expense,Rent,expense,11000.00,apartment lease rent payment
+176,primary,2024-09-04,expense,Utilities,expense,1947.11,home broadband and power bill
+177,secondary,2024-09-04,expense,Utilities,expense,1142.33,home broadband and power bill
+178,primary,2024-09-05,expense,Education,expense,3500.00,online course tuition payment
+179,secondary,2024-09-05,expense,Education,expense,2500.00,certification learning platform fee
+180,primary,2024-09-08,expense,Groceries,expense,8675.12,weekly vegetables and pantry shopping
+181,secondary,2024-09-09,expense,Groceries,expense,5392.16,fresh produce and staples market
+182,primary,2024-09-15,expense,Food delivery,expense,979.26,quick service food app order
+183,scenario,2024-09-15,expense,Variable expenses,expense,10000.00,synthetic monthly discretionary costs
+184,secondary,2024-09-15,expense,Food delivery,expense,682.20,restaurant takeaway meal order
+185,primary,2024-09-18,expense,Healthcare,expense,776.23,clinic consultation and medicines
+186,primary,2024-09-20,expense,Transportation,expense,2556.80,metro card recharge commute
+187,secondary,2024-09-20,expense,Transportation,expense,1688.33,local train and cab fare
+188,secondary,2024-09-23,expense,Entertainment,expense,549.04,cinema tickets and streaming
+189,secondary,2024-09-24,income,Freelancing,income,4985.43,freelance design project payment
+190,primary,2024-09-27,expense,Travel,expense,15753.56,family travel reservation
+191,primary,2024-09-30,income,Salary,income,50000.00,monthly payroll transfer
+192,primary,2024-09-30,expense,Entertainment,expense,2649.96,weekend event entertainment
+193,scenario,2024-09-30,income,Salary,income,50000.00,synthetic monthly salary scenario
+194,primary,2024-10-01,expense,Rent,expense,18000.00,apartment lease rent payment
+195,scenario,2024-10-01,expense,Fixed expenses,expense,20000.00,synthetic monthly fixed household costs
+196,secondary,2024-10-01,income,Internship stipend,income,32000.00,monthly internship stipend credit
+197,secondary,2024-10-01,expense,Rent,expense,11000.00,monthly apartment rent transfer
+198,primary,2024-10-04,expense,Utilities,expense,2896.32,home broadband and power bill
+199,secondary,2024-10-04,expense,Utilities,expense,1598.29,electricity bill payment
+200,primary,2024-10-05,expense,Education,expense,3500.00,college class fee installment
+201,secondary,2024-10-05,expense,Education,expense,2500.00,college class fee installment
+202,primary,2024-10-08,expense,Groceries,expense,6240.55,grocery supermarket household staples
+203,secondary,2024-10-09,expense,Groceries,expense,5139.76,weekly vegetables and pantry shopping
+204,primary,2024-10-15,expense,Food delivery,expense,1534.64,quick service food app order
+205,scenario,2024-10-15,expense,Variable expenses,expense,10000.00,synthetic monthly discretionary costs
+206,secondary,2024-10-15,expense,Food delivery,expense,988.44,restaurant takeaway meal order
+207,secondary,2024-10-18,expense,Healthcare,expense,863.15,clinic consultation and medicines
+208,primary,2024-10-19,expense,Healthcare,expense,42500.00,hospital diagnostic and treatment invoice
+209,primary,2024-10-20,expense,Transportation,expense,2771.28,bus and auto ride commute
+210,secondary,2024-10-20,expense,Transportation,expense,1665.48,bus and auto ride commute
+211,secondary,2024-10-23,expense,Entertainment,expense,1759.60,music and movie subscription
+212,primary,2024-10-25,expense,Shopping,expense,4671.37,electronics store shopping
+213,primary,2024-10-26,income,Freelancing,income,10395.86,freelance design project payment
+214,primary,2024-10-31,income,Salary,income,50000.00,monthly salary payroll credit
+215,primary,2024-10-31,expense,Entertainment,expense,2427.40,weekend event entertainment
+216,scenario,2024-10-31,income,Salary,income,50000.00,synthetic monthly salary scenario
+217,primary,2024-11-01,expense,Rent,expense,18000.00,monthly apartment rent transfer
+218,scenario,2024-11-01,expense,Fixed expenses,expense,20000.00,synthetic monthly fixed household costs
+219,secondary,2024-11-01,income,Internship stipend,income,32000.00,training stipend deposit
+220,secondary,2024-11-01,expense,Rent,expense,11000.00,monthly apartment rent transfer
+221,primary,2024-11-04,expense,Utilities,expense,1867.13,home broadband and power bill
+222,secondary,2024-11-04,expense,Utilities,expense,1840.77,home broadband and power bill
+223,primary,2024-11-05,expense,Education,expense,3500.00,college class fee installment
+224,secondary,2024-11-05,expense,Education,expense,2500.00,college class fee installment
+225,primary,2024-11-08,expense,Groceries,expense,8250.03,fresh produce and staples market
+226,secondary,2024-11-09,expense,Groceries,expense,4389.31,weekly vegetables and pantry shopping
+227,primary,2024-11-15,expense,Food delivery,expense,1779.43,restaurant takeaway meal order
+228,scenario,2024-11-15,expense,Variable expenses,expense,10000.00,synthetic monthly discretionary costs
+229,secondary,2024-11-15,expense,Food delivery,expense,1181.78,restaurant takeaway meal order
+230,primary,2024-11-18,expense,Healthcare,expense,1263.24,pharmacy prescription medicine
+231,primary,2024-11-20,expense,Transportation,expense,2372.25,local train and cab fare
+232,secondary,2024-11-20,expense,Transportation,expense,1156.81,bus and auto ride commute
+233,secondary,2024-11-23,expense,Entertainment,expense,807.97,music and movie subscription
+234,primary,2024-11-30,income,Salary,income,50000.00,employer salary deposit
+235,primary,2024-11-30,expense,Entertainment,expense,1318.61,cinema tickets and streaming
+236,scenario,2024-11-30,income,Salary,income,50000.00,synthetic monthly salary scenario
+237,primary,2024-12-01,expense,Rent,expense,18000.00,apartment lease rent payment
+238,scenario,2024-12-01,expense,Fixed expenses,expense,20000.00,synthetic monthly fixed household costs
+239,secondary,2024-12-01,income,Internship stipend,income,32000.00,intern program payment
+240,secondary,2024-12-01,expense,Rent,expense,11000.00,apartment lease rent payment
+241,primary,2024-12-04,expense,Utilities,expense,2984.09,home broadband and power bill
+242,secondary,2024-12-04,expense,Utilities,expense,1743.20,electricity bill payment
+243,primary,2024-12-05,expense,Education,expense,3500.00,certification learning platform fee
+244,secondary,2024-12-05,expense,Education,expense,2500.00,college class fee installment
+245,primary,2024-12-08,expense,Groceries,expense,8614.73,grocery supermarket household staples
+246,secondary,2024-12-09,expense,Groceries,expense,6450.41,fresh produce and staples market
+247,primary,2024-12-15,expense,Food delivery,expense,1183.51,food delivery dinner order
+248,scenario,2024-12-15,expense,Variable expenses,expense,10000.00,synthetic monthly discretionary costs
+249,secondary,2024-12-15,expense,Food delivery,expense,597.95,restaurant takeaway meal order
+250,primary,2024-12-20,expense,Transportation,expense,1602.76,bus and auto ride commute
+251,secondary,2024-12-20,expense,Transportation,expense,1700.58,bus and auto ride commute
+252,secondary,2024-12-23,expense,Entertainment,expense,1647.47,cinema tickets and streaming
+253,secondary,2024-12-24,income,Freelancing,income,5611.47,freelance design project payment
+254,secondary,2024-12-25,expense,Shopping,expense,3059.17,clothing and household shopping
+255,primary,2024-12-26,income,Freelancing,income,9145.95,independent consulting fee
+256,primary,2024-12-31,income,Salary,income,50000.00,monthly payroll transfer
+257,primary,2024-12-31,expense,Entertainment,expense,1036.03,cinema tickets and streaming
+258,scenario,2024-12-31,income,Salary,income,50000.00,synthetic monthly salary scenario
+259,primary,2025-01-01,expense,Rent,expense,18000.00,apartment lease rent payment
+260,secondary,2025-01-01,income,Internship stipend,income,32000.00,monthly internship stipend credit
+261,secondary,2025-01-01,expense,Rent,expense,11000.00,apartment lease rent payment
+262,primary,2025-01-04,expense,Utilities,expense,1859.78,home broadband and power bill
+263,secondary,2025-01-04,expense,Utilities,expense,1288.15,home broadband and power bill
+264,primary,2025-01-05,expense,Education,expense,3500.00,college class fee installment
+265,secondary,2025-01-05,expense,Education,expense,2500.00,college class fee installment
+266,primary,2025-01-08,expense,Groceries,expense,6081.72,fresh produce and staples market
+267,secondary,2025-01-09,expense,Groceries,expense,4602.45,grocery supermarket household staples
+268,primary,2025-01-15,expense,Food delivery,expense,2874.14,restaurant takeaway meal order
+269,secondary,2025-01-15,expense,Food delivery,expense,994.03,restaurant takeaway meal order
+270,primary,2025-01-18,expense,Healthcare,expense,1193.31,pharmacy prescription medicine
+271,primary,2025-01-20,expense,Transportation,expense,2778.30,bus and auto ride commute
+272,secondary,2025-01-20,expense,Transportation,expense,1017.69,bus and auto ride commute
+273,secondary,2025-01-23,expense,Entertainment,expense,1762.83,weekend event entertainment
+274,primary,2025-01-25,expense,Shopping,expense,2696.12,electronics store shopping
+275,primary,2025-01-31,income,Salary,income,50000.00,monthly salary payroll credit
+276,primary,2025-01-31,expense,Entertainment,expense,3101.13,cinema tickets and streaming
+277,primary,2025-02-01,expense,Rent,expense,18000.00,home rental payment to landlord
+278,secondary,2025-02-01,income,Internship stipend,income,32000.00,training stipend deposit
+279,secondary,2025-02-01,expense,Rent,expense,11000.00,home rental payment to landlord
+280,primary,2025-02-04,expense,Utilities,expense,2577.47,home broadband and power bill
+281,secondary,2025-02-04,expense,Utilities,expense,1308.32,internet and electricity bill
+282,primary,2025-02-05,expense,Education,expense,3500.00,college class fee installment
+283,secondary,2025-02-05,expense,Education,expense,2500.00,college class fee installment
+284,primary,2025-02-08,expense,Groceries,expense,6391.46,fresh produce and staples market
+285,secondary,2025-02-09,expense,Groceries,expense,6002.05,fresh produce and staples market
+286,primary,2025-02-15,expense,Food delivery,expense,2900.65,restaurant takeaway meal order
+287,secondary,2025-02-15,expense,Food delivery,expense,1394.72,quick service food app order
+288,secondary,2025-02-18,expense,Healthcare,expense,787.51,clinic consultation and medicines
+289,primary,2025-02-20,expense,Transportation,expense,3050.69,bus and auto ride commute
+290,secondary,2025-02-20,expense,Transportation,expense,1043.94,metro card recharge commute
+291,secondary,2025-02-23,expense,Entertainment,expense,1442.42,music and movie subscription
+292,primary,2025-02-26,income,Freelancing,income,6297.44,contract writing invoice credit
+293,primary,2025-02-28,income,Salary,income,50000.00,employer salary deposit
+294,primary,2025-02-28,expense,Entertainment,expense,1384.42,weekend event entertainment
+295,primary,2025-03-01,expense,Rent,expense,18000.00,home rental payment to landlord
+296,secondary,2025-03-01,income,Internship stipend,income,32000.00,intern program payment
+297,secondary,2025-03-01,expense,Rent,expense,11000.00,apartment lease rent payment
+298,primary,2025-03-04,expense,Utilities,expense,2121.50,internet and electricity bill
+299,secondary,2025-03-04,expense,Utilities,expense,1563.83,electricity bill payment
+300,primary,2025-03-05,expense,Education,expense,3500.00,online course tuition payment
+301,secondary,2025-03-05,expense,Education,expense,2500.00,certification learning platform fee
+302,primary,2025-03-08,expense,Groceries,expense,5987.28,fresh produce and staples market
+303,secondary,2025-03-09,expense,Groceries,expense,5673.16,grocery supermarket household staples
+304,primary,2025-03-15,expense,Food delivery,expense,2523.50,quick service food app order
+305,secondary,2025-03-15,expense,Food delivery,expense,1279.21,food delivery dinner order
+306,primary,2025-03-16,expense,Food delivery,expense,16500.00,family celebration catering and dinner order
+307,primary,2025-03-18,expense,Healthcare,expense,1727.79,pharmacy prescription medicine
+308,primary,2025-03-20,expense,Transportation,expense,1655.88,bus and auto ride commute
+309,secondary,2025-03-20,expense,Transportation,expense,1590.60,local train and cab fare
+310,secondary,2025-03-23,expense,Entertainment,expense,655.89,cinema tickets and streaming
+311,secondary,2025-03-24,income,Freelancing,income,4126.10,freelance design project payment
+312,primary,2025-03-27,expense,Travel,expense,9900.55,hotel and transport trip expense
+313,primary,2025-03-31,income,Salary,income,50000.00,monthly payroll transfer
+314,primary,2025-03-31,expense,Entertainment,expense,2201.85,music and movie subscription
+315,primary,2025-04-01,expense,Rent,expense,18000.00,apartment lease rent payment
+316,secondary,2025-04-01,income,Internship stipend,income,32000.00,monthly internship stipend credit
+317,secondary,2025-04-01,expense,Rent,expense,11000.00,apartment lease rent payment
+318,primary,2025-04-04,expense,Utilities,expense,3746.08,electricity bill payment
+319,secondary,2025-04-04,expense,Utilities,expense,1616.03,internet and electricity bill
+320,primary,2025-04-05,expense,Education,expense,3500.00,certification learning platform fee
+321,secondary,2025-04-05,expense,Education,expense,2500.00,certification learning platform fee
+322,primary,2025-04-08,expense,Groceries,expense,6915.95,fresh produce and staples market
+323,secondary,2025-04-09,expense,Groceries,expense,5930.12,weekly vegetables and pantry shopping
+324,primary,2025-04-15,expense,Food delivery,expense,2831.76,restaurant takeaway meal order
+325,secondary,2025-04-15,expense,Food delivery,expense,485.43,quick service food app order
+326,primary,2025-04-20,expense,Transportation,expense,3155.39,bus and auto ride commute
+327,secondary,2025-04-20,expense,Transportation,expense,1778.25,metro card recharge commute
+328,secondary,2025-04-23,expense,Entertainment,expense,1134.11,weekend event entertainment
+329,primary,2025-04-25,expense,Shopping,expense,2990.64,electronics store shopping
+330,secondary,2025-04-25,expense,Shopping,expense,4486.48,electronics store shopping
+331,primary,2025-04-26,income,Freelancing,income,11116.13,freelance design project payment
+332,primary,2025-04-28,expense,Bank charges,expense,34.01,bank account service fee
+333,primary,2025-04-30,income,Salary,income,50000.00,monthly salary payroll credit
+334,primary,2025-04-30,expense,Entertainment,expense,3060.91,weekend event entertainment
+335,primary,2025-05-01,expense,Rent,expense,18000.00,monthly apartment rent transfer
+336,secondary,2025-05-01,income,Internship stipend,income,32000.00,training stipend deposit
+337,secondary,2025-05-01,expense,Rent,expense,11000.00,monthly apartment rent transfer
+338,primary,2025-05-04,expense,Utilities,expense,2573.43,home broadband and power bill
+339,secondary,2025-05-04,expense,Utilities,expense,1290.05,home broadband and power bill
+340,primary,2025-05-05,expense,Education,expense,3500.00,college class fee installment
+341,secondary,2025-05-05,expense,Education,expense,2500.00,online course tuition payment
+342,primary,2025-05-08,expense,Groceries,expense,8052.40,fresh produce and staples market
+343,secondary,2025-05-09,expense,Groceries,expense,5287.44,weekly vegetables and pantry shopping
+344,primary,2025-05-15,expense,Food delivery,expense,3004.72,quick service food app order
+345,secondary,2025-05-15,expense,Food delivery,expense,1656.54,restaurant takeaway meal order
+346,primary,2025-05-18,expense,Healthcare,expense,1595.44,healthcare diagnostic test payment
+347,primary,2025-05-20,expense,Transportation,expense,1656.22,metro card recharge commute
+348,secondary,2025-05-20,expense,Transportation,expense,1539.07,local train and cab fare
+349,secondary,2025-05-23,expense,Entertainment,expense,1683.64,cinema tickets and streaming
+350,primary,2025-05-31,income,Salary,income,50000.00,employer salary deposit
+351,primary,2025-05-31,expense,Entertainment,expense,1027.94,weekend event entertainment
+352,primary,2025-06-01,expense,Rent,expense,18000.00,monthly apartment rent transfer
+353,secondary,2025-06-01,income,Internship stipend,income,32000.00,intern program payment
+354,secondary,2025-06-01,expense,Rent,expense,11000.00,apartment lease rent payment
+355,primary,2025-06-04,expense,Utilities,expense,2723.70,electricity bill payment
+356,secondary,2025-06-04,expense,Utilities,expense,1213.36,internet and electricity bill
+357,primary,2025-06-05,expense,Education,expense,3500.00,college class fee installment
+358,secondary,2025-06-05,expense,Education,expense,2500.00,online course tuition payment
+359,primary,2025-06-08,expense,Groceries,expense,7033.02,weekly vegetables and pantry shopping
+360,secondary,2025-06-09,expense,Groceries,expense,4676.03,weekly vegetables and pantry shopping
+361,primary,2025-06-15,expense,Food delivery,expense,1145.67,restaurant takeaway meal order
+362,secondary,2025-06-15,expense,Food delivery,expense,1018.89,quick service food app order
+363,secondary,2025-06-18,expense,Healthcare,expense,626.34,clinic consultation and medicines
+364,primary,2025-06-20,expense,Transportation,expense,1429.69,bus and auto ride commute
+365,secondary,2025-06-20,expense,Transportation,expense,1291.17,metro card recharge commute
+366,secondary,2025-06-23,expense,Entertainment,expense,1529.49,cinema tickets and streaming
+367,secondary,2025-06-24,income,Freelancing,income,5621.16,freelance design project payment
+368,primary,2025-06-26,income,Freelancing,income,9081.63,independent consulting fee
+369,primary,2025-06-30,income,Salary,income,50000.00,monthly payroll transfer
+370,primary,2025-06-30,expense,Entertainment,expense,1959.46,music and movie subscription
+371,primary,2025-07-01,expense,Rent,expense,18000.00,monthly apartment rent transfer
+372,secondary,2025-07-01,income,Internship stipend,income,32000.00,monthly internship stipend credit
+373,secondary,2025-07-01,expense,Rent,expense,11000.00,home rental payment to landlord
+374,primary,2025-07-04,expense,Utilities,expense,3922.17,internet and electricity bill
+375,secondary,2025-07-04,expense,Utilities,expense,1543.56,electricity bill payment
+376,primary,2025-07-05,expense,Education,expense,3500.00,online course tuition payment
+377,secondary,2025-07-05,expense,Education,expense,2500.00,online course tuition payment
+378,primary,2025-07-08,expense,Groceries,expense,5990.08,grocery supermarket household staples
+379,secondary,2025-07-09,expense,Groceries,expense,6523.08,fresh produce and staples market
+380,primary,2025-07-15,expense,Food delivery,expense,1485.98,food delivery dinner order
+381,secondary,2025-07-15,expense,Food delivery,expense,1705.63,food delivery dinner order
+382,primary,2025-07-18,expense,Healthcare,expense,693.20,clinic consultation and medicines
+383,primary,2025-07-20,expense,Transportation,expense,2203.00,bus and auto ride commute
+384,secondary,2025-07-20,expense,Transportation,expense,1579.31,metro card recharge commute
+385,secondary,2025-07-23,expense,Entertainment,expense,706.83,weekend event entertainment
+386,primary,2025-07-25,expense,Shopping,expense,5167.56,clothing and household shopping
+387,primary,2025-07-29,expense,Shopping,expense,72000.00,one time laptop purchase electronics store
+388,primary,2025-07-31,income,Salary,income,50000.00,monthly salary payroll credit
+389,primary,2025-07-31,expense,Entertainment,expense,3182.41,weekend event entertainment
+390,primary,2025-08-01,expense,Rent,expense,18000.00,monthly apartment rent transfer
+391,secondary,2025-08-01,income,Internship stipend,income,32000.00,training stipend deposit
+392,secondary,2025-08-01,expense,Rent,expense,11000.00,home rental payment to landlord
+393,primary,2025-08-04,expense,Utilities,expense,3497.74,home broadband and power bill
+394,secondary,2025-08-04,expense,Utilities,expense,1617.53,internet and electricity bill
+395,primary,2025-08-05,expense,Education,expense,3500.00,online course tuition payment
+396,secondary,2025-08-05,expense,Education,expense,2500.00,certification learning platform fee
+397,primary,2025-08-08,expense,Groceries,expense,6360.10,weekly vegetables and pantry shopping
+398,secondary,2025-08-09,expense,Groceries,expense,5889.85,weekly vegetables and pantry shopping
+399,primary,2025-08-15,expense,Food delivery,expense,3095.15,quick service food app order
+400,secondary,2025-08-15,expense,Food delivery,expense,1712.05,food delivery dinner order
+401,primary,2025-08-20,expense,Transportation,expense,2230.83,metro card recharge commute
+402,secondary,2025-08-20,expense,Transportation,expense,1900.42,metro card recharge commute
+403,secondary,2025-08-23,expense,Entertainment,expense,1042.97,music and movie subscription
+404,secondary,2025-08-25,expense,Shopping,expense,2444.56,online retail purchase
+405,primary,2025-08-26,income,Freelancing,income,12165.46,contract writing invoice credit
+406,primary,2025-08-31,income,Salary,income,50000.00,employer salary deposit
+407,primary,2025-08-31,expense,Entertainment,expense,1479.93,music and movie subscription
+408,primary,2025-09-01,expense,Rent,expense,18000.00,apartment lease rent payment
+409,secondary,2025-09-01,income,Internship stipend,income,32000.00,intern program payment
+410,secondary,2025-09-01,expense,Rent,expense,11000.00,apartment lease rent payment
+411,primary,2025-09-04,expense,Utilities,expense,2153.86,electricity bill payment
+412,secondary,2025-09-04,expense,Utilities,expense,1403.76,internet and electricity bill
+413,primary,2025-09-05,expense,Education,expense,3500.00,online course tuition payment
+414,secondary,2025-09-05,expense,Education,expense,2500.00,online course tuition payment
+415,primary,2025-09-08,expense,Groceries,expense,8373.73,weekly vegetables and pantry shopping
+416,secondary,2025-09-09,expense,Groceries,expense,4205.83,grocery supermarket household staples
+417,primary,2025-09-15,expense,Food delivery,expense,1228.23,quick service food app order
+418,secondary,2025-09-15,expense,Food delivery,expense,1116.03,restaurant takeaway meal order
+419,primary,2025-09-18,expense,Healthcare,expense,1737.37,healthcare diagnostic test payment
+420,primary,2025-09-20,expense,Transportation,expense,1838.98,metro card recharge commute
+421,secondary,2025-09-20,expense,Transportation,expense,1243.25,bus and auto ride commute
+422,secondary,2025-09-23,expense,Entertainment,expense,841.12,cinema tickets and streaming
+423,secondary,2025-09-24,income,Freelancing,income,8046.98,freelance design project payment
+424,primary,2025-09-27,expense,Travel,expense,14066.01,hotel and transport trip expense
+425,primary,2025-09-30,income,Salary,income,50000.00,monthly payroll transfer
+426,primary,2025-09-30,expense,Entertainment,expense,2010.96,cinema tickets and streaming
+427,primary,2025-10-01,expense,Rent,expense,18000.00,apartment lease rent payment
+428,secondary,2025-10-01,income,Internship stipend,income,32000.00,monthly internship stipend credit
+429,secondary,2025-10-01,expense,Rent,expense,11000.00,apartment lease rent payment
+430,primary,2025-10-04,expense,Utilities,expense,3206.55,internet and electricity bill
+431,secondary,2025-10-04,expense,Utilities,expense,1514.39,home broadband and power bill
+432,primary,2025-10-05,expense,Education,expense,3500.00,certification learning platform fee
+433,secondary,2025-10-05,expense,Education,expense,2500.00,certification learning platform fee
+434,primary,2025-10-08,expense,Groceries,expense,6555.43,weekly vegetables and pantry shopping
+435,secondary,2025-10-09,expense,Groceries,expense,5590.20,fresh produce and staples market
+436,primary,2025-10-15,expense,Food delivery,expense,1777.30,quick service food app order
+437,secondary,2025-10-15,expense,Food delivery,expense,483.85,restaurant takeaway meal order
+438,secondary,2025-10-18,expense,Healthcare,expense,873.90,clinic consultation and medicines
+439,primary,2025-10-20,expense,Transportation,expense,2504.63,local train and cab fare
+440,secondary,2025-10-20,expense,Transportation,expense,1720.28,bus and auto ride commute
+441,secondary,2025-10-23,expense,Entertainment,expense,1070.62,weekend event entertainment
+442,primary,2025-10-25,expense,Shopping,expense,3088.49,electronics store shopping
+443,primary,2025-10-26,income,Freelancing,income,8228.02,freelance design project payment
+444,primary,2025-10-31,income,Salary,income,50000.00,monthly salary payroll credit
+445,primary,2025-10-31,expense,Entertainment,expense,1842.67,cinema tickets and streaming
+446,primary,2025-11-01,expense,Rent,expense,18000.00,monthly apartment rent transfer
+447,secondary,2025-11-01,income,Internship stipend,income,32000.00,training stipend deposit
+448,secondary,2025-11-01,expense,Rent,expense,11000.00,monthly apartment rent transfer
+449,primary,2025-11-04,expense,Utilities,expense,2649.58,electricity bill payment
+450,secondary,2025-11-04,expense,Utilities,expense,2035.45,home broadband and power bill
+451,primary,2025-11-05,expense,Education,expense,3500.00,college class fee installment
+452,secondary,2025-11-05,expense,Education,expense,2500.00,online course tuition payment
+453,primary,2025-11-08,expense,Groceries,expense,7201.74,fresh produce and staples market
+454,secondary,2025-11-09,expense,Groceries,expense,4502.59,fresh produce and staples market
+455,primary,2025-11-15,expense,Food delivery,expense,2993.18,restaurant takeaway meal order
+456,secondary,2025-11-15,expense,Food delivery,expense,1290.12,food delivery dinner order
+457,primary,2025-11-18,expense,Healthcare,expense,772.80,clinic consultation and medicines
+458,primary,2025-11-20,expense,Transportation,expense,1976.70,bus and auto ride commute
+459,secondary,2025-11-20,expense,Transportation,expense,1400.93,bus and auto ride commute
+460,secondary,2025-11-23,expense,Entertainment,expense,1151.46,music and movie subscription
+461,primary,2025-11-30,income,Salary,income,50000.00,employer salary deposit
+462,primary,2025-11-30,expense,Entertainment,expense,2525.84,weekend event entertainment
+463,primary,2025-12-01,expense,Rent,expense,18000.00,apartment lease rent payment
+464,secondary,2025-12-01,income,Internship stipend,income,32000.00,intern program payment
+465,secondary,2025-12-01,expense,Rent,expense,11000.00,home rental payment to landlord
+466,primary,2025-12-04,expense,Utilities,expense,2084.05,electricity bill payment
+467,secondary,2025-12-04,expense,Utilities,expense,1851.58,home broadband and power bill
+468,primary,2025-12-05,expense,Education,expense,3500.00,college class fee installment
+469,secondary,2025-12-05,expense,Education,expense,2500.00,online course tuition payment
+470,primary,2025-12-08,expense,Groceries,expense,8627.83,grocery supermarket household staples
+471,secondary,2025-12-09,expense,Groceries,expense,4451.03,grocery supermarket household staples
+472,primary,2025-12-15,expense,Food delivery,expense,1244.92,food delivery dinner order
+473,secondary,2025-12-15,expense,Food delivery,expense,1455.44,food delivery dinner order
+474,primary,2025-12-20,expense,Transportation,expense,2766.04,bus and auto ride commute
+475,secondary,2025-12-20,expense,Transportation,expense,1970.62,local train and cab fare
+476,secondary,2025-12-23,expense,Entertainment,expense,938.83,weekend event entertainment
+477,secondary,2025-12-24,income,Freelancing,income,3041.94,freelance design project payment
+478,secondary,2025-12-25,expense,Shopping,expense,4234.92,online retail purchase
+479,primary,2025-12-26,income,Freelancing,income,6580.52,independent consulting fee
+480,primary,2025-12-31,income,Salary,income,50000.00,monthly payroll transfer
+481,primary,2025-12-31,expense,Entertainment,expense,2857.81,cinema tickets and streaming

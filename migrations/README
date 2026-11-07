@@ -1,0 +1,1 @@
+Flask-Migrate will create migration environment files here with `flask db init`.

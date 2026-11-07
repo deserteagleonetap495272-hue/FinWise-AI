@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ heading }} | FinWise AI{% endblock %}
+{% block content %}
+<a class="small" href="{{ url_for('savings.list_goals') }}">← Back to savings goals</a>
+<section class="auth-card transaction-form-card mx-auto p-4 p-md-5 rounded-4 mt-3">
+  <p class="eyebrow">SAVINGS PLAN</p><h1 class="h2 mb-4">{{ heading }}</h1>
+  <form method="post" novalidate>{{ form.hidden_tag() }}
+    <div class="mb-3">{{ form.name.label(class_="form-label") }}{{ form.name(class_="form-control" + (" is-invalid" if form.name.errors else ""), maxlength="120") }}{% for error in form.name.errors %}<div class="invalid-feedback">{{ error }}</div>{% endfor %}</div>
+    <div class="mb-3">{{ form.target_amount.label(class_="form-label") }}{{ form.target_amount(class_="form-control" + (" is-invalid" if form.target_amount.errors else ""), type="number", step="0.01", min="0.01") }}{% for error in form.target_amount.errors %}<div class="invalid-feedback">{{ error }}</div>{% endfor %}</div>
+    <div class="mb-3">{{ form.target_date.label(class_="form-label") }}{{ form.target_date(class_="form-control" + (" is-invalid" if form.target_date.errors else ""), type="date") }}{% for error in form.target_date.errors %}<div class="invalid-feedback">{{ error }}</div>{% endfor %}</div>
+    <div class="mb-4">{{ form.description.label(class_="form-label") }}{{ form.description(class_="form-control", rows="3", maxlength="2000") }}{% for error in form.description.errors %}<div class="invalid-feedback">{{ error }}</div>{% endfor %}</div>
+    {{ form.submit(class_="btn btn-success w-100 py-2") }}
+  </form>
+</section>
+{% endblock %}

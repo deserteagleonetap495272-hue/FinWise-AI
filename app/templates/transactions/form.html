@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}{{ heading }} | FinWise AI{% endblock %}
+{% block content %}
+<a class="small" href="{{ url_for('transactions.list_transactions') }}">← Back to transactions</a>
+<section class="auth-card transaction-form-card mx-auto p-4 p-md-5 rounded-4 mt-3">
+  <p class="eyebrow">TRANSACTION MANAGEMENT</p><h1 class="h2 mb-4">{{ heading }}</h1>
+  <form method="post" novalidate>
+    {{ form.hidden_tag() }}
+    {% for field in [form.transaction_type, form.amount, form.category_id, form.description, form.transaction_date, form.notes] %}
+      <div class="mb-3">
+        {{ field.label(class_="form-label") }}
+        {% if field.name == 'category_id' %}
+          <select class="form-select{% if field.errors %} is-invalid{% endif %}" id="category_id" name="category_id" required>
+            <option value="">Choose a category</option>
+            {% for choice in field.choices %}<option value="{{ choice.value }}" data-type="{{ choice.render_kw.get('data-type', '') }}" {% if field.data|string == choice.value|string %}selected{% endif %}>{{ choice.label }}</option>{% endfor %}
+          </select>
+        {% elif field.name == 'notes' %}
+          {{ field(class_="form-control", rows="3", maxlength="5000") }}
+        {% else %}
+          {{ field(class_="form-control" + (" is-invalid" if field.errors else ""), type={"amount":"number", "transaction_date":"date"}.get(field.name, ""), step="0.01" if field.name == "amount" else None, min="0.01" if field.name == "amount" else None) }}
+        {% endif %}
+        {% for error in field.errors %}<div class="invalid-feedback">{{ error }}</div>{% endfor %}
+      </div>
+    {% endfor %}
+    <p class="small text-secondary">The category must match the selected transaction type.</p>
+    {{ form.submit(class_="btn btn-success w-100 py-2") }}
+  </form>
+</section>
+<script src="{{ url_for('static', filename='js/transaction-form.js') }}" defer></script>
+{% endblock %}

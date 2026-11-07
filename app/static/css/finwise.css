@@ -1,0 +1,40 @@
+:root { color-scheme: dark; --page: #0b1220; --panel: #121d2d; --green: #32c982; }
+body { min-height: 100vh; background: var(--page); color: #f4f7fb; }
+.navbar { background: #0b1220; }
+.navbar-brand span, a { color: var(--green); }
+.nav-link { color: #d7dfeb; }
+.hero-card, .auth-card { background: var(--panel); border: 1px solid #26364b; }
+.hero-card { max-width: 900px; margin: 3rem auto; }
+.auth-card { max-width: 510px; }
+.eyebrow { color: var(--green); font-size: .75rem; font-weight: 700; letter-spacing: .14em; }
+.form-control { color: #f4f7fb; background: #0b1220; border-color: #314158; }
+.form-control:focus { color: #fff; background: #0b1220; border-color: var(--green); box-shadow: 0 0 0 .2rem #32c98233; }
+.form-text, .text-secondary { color: #a7b4c5 !important; }
+.panel, .stat-card { padding: 1.25rem; background: var(--panel); border: 1px solid #26364b; border-radius: 1rem; }
+.stat-card { height: 100%; }
+.stat-card p { margin-bottom: .55rem; color: #a7b4c5; font-size: .9rem; }
+.stat-card strong { font-size: clamp(1.35rem, 2vw, 1.8rem); font-weight: 600; }
+.chart-wrap { height: 260px; }
+.category-chart-wrap { height: 320px; max-width: 550px; margin: 0 auto; }
+.empty-state { padding: 2.25rem 1rem; color: #a7b4c5; text-align: center; }
+.positive { color: #63dda3 !important; }
+.table { --bs-table-bg: transparent; }
+.form-select { color: #f4f7fb; background-color: #0b1220; border-color: #314158; }
+.form-select:focus { color: #fff; background-color: #0b1220; border-color: var(--green); box-shadow: 0 0 0 .2rem #32c98233; }
+.transaction-form-card { max-width: 620px; }
+.status-normal { color: #a8d8c2; background: #174532; }
+.status-warning { color: #ffe19a; background: #5b4718; }
+.status-critical { color: #ffc27c; background: #603b19; }
+.status-overspent, .status-overdue { color: #ffc1bd; background: #642c2b; }
+.status-completed { color: #a8f0c9; background: #174532; }
+.status-in_progress { color: #b6ddff; background: #1d4160; }
+.status-not_started { color: #c7d0dd; background: #354153; }
+.progress-warning .progress-bar { background-color: #e6b85c; }
+.progress-critical .progress-bar, .progress-overspent .progress-bar { background-color: #e47c78; }
+.progress { background-color: #28384b; }
+.analytics-filters .form-control, .analytics-filters .form-select { min-width: 145px; }
+.analytics-label { font-size: 1.15rem !important; }
+.insight-card { padding: .9rem 1rem; background: #0b1220; border: 1px solid #26364b; border-left: 3px solid var(--green); border-radius: .65rem; }
+.analytics-list { list-style: none; padding: 0; margin: .5rem 0 0; }
+.analytics-list li { display: flex; justify-content: space-between; gap: .75rem; padding: .45rem 0; border-bottom: 1px solid #26364b; }
+.analytics-list li span { color: #a7b4c5; text-align: right; }

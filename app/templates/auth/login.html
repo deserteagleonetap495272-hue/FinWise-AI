@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Log in | FinWise AI{% endblock %}
+{% block content %}
+<section class="auth-card mx-auto p-4 p-md-5 rounded-4">
+  <p class="eyebrow">WELCOME BACK</p>
+  <h1 class="h2 mb-2">Log in to FinWise</h1>
+  <p class="text-secondary mb-4">Use your email and password to continue.</p>
+  <form method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+      {{ form.email.label(class_="form-label") }}
+      {{ form.email(class_="form-control" + (" is-invalid" if form.email.errors else ""), autocomplete="email", type="email") }}
+      {% for error in form.email.errors %}<div class="invalid-feedback">{{ error }}</div>{% endfor %}
+    </div>
+    <div class="mb-4">
+      {{ form.password.label(class_="form-label") }}
+      {{ form.password(class_="form-control" + (" is-invalid" if form.password.errors else ""), autocomplete="current-password") }}
+      {% for error in form.password.errors %}<div class="invalid-feedback">{{ error }}</div>{% endfor %}
+    </div>
+    {{ form.submit(class_="btn btn-success w-100 py-2") }}
+  </form>
+  <p class="small text-secondary mt-4 mb-0">New to FinWise? <a href="{{ url_for('web.register') }}">Create an account</a></p>
+</section>
+{% endblock %}

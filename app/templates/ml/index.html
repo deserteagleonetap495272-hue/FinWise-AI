@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}ML insights | FinWise AI{% endblock %}
+{% block content %}
+<div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+  <div><p class="eyebrow mb-2">PERSONALIZED FROM YOUR RECORDS</p><h1 class="h2 mb-1">ML insights</h1><p class="text-secondary mb-0">Predictions use your transaction history. They are estimates, not financial advice.</p></div>
+  <span class="badge text-bg-secondary">{{ transaction_count }} transactions analyzed</span>
+</div>
+
+<div class="row g-3 mb-4">
+  <div class="col-12 col-xl-6"><section class="panel h-100">
+    <div class="d-flex justify-content-between align-items-start gap-2"><div><h2 class="h5">Next-month expense prediction</h2><p class="small text-secondary mb-0">Uses all valid transaction history; no date filter is applied to the model.</p></div><span class="badge {% if expense_status.status == 'current' %}text-bg-success{% elif expense_status.status in ['stale', 'stale_version'] %}text-bg-warning{% else %}text-bg-secondary{% endif %}">{{ expense_status.status|replace('_', ' ')|title }}</span></div>
+    {% if transaction_count == 0 %}<div class="empty-state">Add transactions to build your financial history.</div>
+    {% elif prediction.get('status') == 'model_not_current' %}<div class="empty-state">{{ prediction.get('explanation', 'Train or refresh your model to see a prediction.') }}</div>
+    {% elif prediction.get('predicted_expenses') is not none %}
+      <div class="mt-4"><p class="small text-secondary mb-1">{{ prediction.get('prediction_period').strftime('%B %Y') if prediction.get('prediction_period') else 'Next month' }}</p><p class="display-6 mb-2">{{ prediction.get('predicted_expenses')|money(currency) }}</p>
+      <p class="mb-2">{% if prediction.get('model_based') %}Fitted model: <strong>{{ prediction.get('selected_model') }}</strong>{% else %}Baseline estimate: <strong>{{ prediction.get('selected_model') or 'previous-month baseline' }}</strong>{% endif %}</p>
+      {% if not prediction.get('data_sufficient') %}<div class="alert alert-warning mb-3">{{ prediction.get('explanation', 'History is insufficient for a fitted model. This estimate is a baseline only.') }}</div>{% endif %}
+      {% set metrics = prediction.get('metrics') %}{% if metrics %}<div class="d-flex flex-wrap gap-3 small text-secondary"><span>MAE {{ metrics.get('mae')|default('—') }}</span><span>RMSE {{ metrics.get('rmse')|default('—') }}</span><span>R² {{ metrics.get('r2')|default('—') }}</span></div>{% endif %}</div>
+    {% else %}<div class="empty-state">{{ prediction.get('explanation', 'Not enough expense history to produce a prediction.') }}</div>{% endif %}
+    {% set expense_meta = expense_status.get('metadata') %}{% if expense_meta %}<div class="small text-secondary mt-3">{% if expense_meta.get('training_period') %}Training period {{ expense_meta.training_period.start }} to {{ expense_meta.training_period.end }} · {% endif %}Trained {{ expense_meta.training_timestamp }}{% if expense_meta.model_status == 'baseline_only' %} · baseline only{% endif %}</div>{% endif %}
+    {% if expense_status.status in ['stale', 'stale_version', 'missing', 'corrupt'] %}<div class="alert alert-warning mt-3 mb-0">The saved model is {{ expense_status.status|replace('_', ' ') }}. Explicitly refresh it to use the latest transactions.</div>{% endif %}
+    <form class="mt-3 d-flex flex-wrap align-items-center gap-2" method="post" action="{{ url_for('ml.train') }}"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><input type="hidden" name="model_type" value="expense_prediction"><button class="btn btn-success btn-sm" type="submit">Train / refresh expense model</button><label class="small"><input class="form-check-input me-1" type="checkbox" name="force_refresh" value="1"> Force retrain</label></form>
+  </section></div>
+
+  <div class="col-12 col-xl-6"><section class="panel h-100">
+    <div class="d-flex justify-content-between align-items-start gap-2"><div><h2 class="h5">Future expense forecast</h2><p class="small text-secondary mb-0">Actual history and future estimates are labeled separately.</p></div></div>
+    {% if one_month_forecast and one_month_forecast.forecasts %}<div class="table-responsive mt-3"><table class="table table-dark table-sm align-middle"><thead><tr><th>Period</th><th>Value</th><th class="text-end">Amount</th></tr></thead><tbody>{% for row in one_month_forecast.forecasts %}<tr><td>{{ row.period }}</td><td><span class="badge text-bg-info">{{ row.value_type|title }}</span> · {{ row.model_name }}</td><td class="text-end">{{ row.amount|money(currency) }}</td></tr>{% endfor %}</tbody></table></div>
+    {% elif one_month_forecast %}<div class="empty-state">{{ one_month_forecast.explanation }}</div>
+    {% else %}<div class="empty-state">Train or refresh a current expense model to view forecasts.</div>{% endif %}
+    {% if three_month_forecast and three_month_forecast.forecasts %}<h3 class="h6 mt-3">Three-month view</h3><div class="table-responsive"><table class="table table-dark table-sm"><thead><tr><th>Month</th><th>Method</th><th class="text-end">Estimate</th></tr></thead><tbody>{% for row in three_month_forecast.forecasts %}<tr><td>{{ row.period }}</td><td>{{ row.method }}</td><td class="text-end">{{ row.amount|money(currency) }}</td></tr>{% endfor %}</tbody></table></div><p class="small text-secondary">Months two and three use the Stage 5 conservative flat projection; they are not independently trained forecasts.</p>
+    {% elif three_month_forecast %}<div class="alert alert-secondary mt-3 mb-0">{{ three_month_forecast.explanation }}</div>{% endif %}
+    {% if one_month_forecast and one_month_forecast.limitations %}<ul class="small text-secondary mt-2 mb-0">{% for item in one_month_forecast.limitations %}<li>{{ item }}</li>{% endfor %}</ul>{% endif %}
+  </section></div>
+</div>
+
+<section class="panel mb-4"><div class="d-flex flex-wrap justify-content-between align-items-center gap-2"><div><h2 class="h5 mb-1">Actual vs predicted expenses</h2><p class="small text-secondary mb-0">Historical prediction points appear when prediction history exists.</p></div></div>
+  {% if chart.labels %}<div class="chart-wrap mt-3"><canvas id="ml-prediction-chart" aria-label="Actual and predicted monthly expenses"></canvas></div>{% else %}<div class="empty-state">No actual or saved prediction history is available yet.</div>{% endif %}
+</section>
+
+<div class="row g-3 mb-4">
+  <div class="col-12 col-xl-7"><section class="panel h-100"><div class="d-flex flex-wrap justify-content-between align-items-start gap-2"><div><h2 class="h5">Transaction categorization</h2><p class="small text-secondary mb-0">Suggestions never change a transaction until you accept them.</p></div><span class="badge {% if category_status.status == 'current' %}text-bg-success{% elif category_status.status in ['stale', 'stale_version'] %}text-bg-warning{% else %}text-bg-secondary{% endif %}">{{ category_status.status|replace('_', ' ')|title }}</span></div>
+    {% if category_status.status in ['stale', 'stale_version', 'missing', 'corrupt'] %}<p class="small text-warning mt-3">Train or refresh the categorizer to suggest categories from the latest records.</p>{% endif %}
+    <form class="mt-3 d-flex flex-wrap align-items-center gap-2" method="post" action="{{ url_for('ml.train') }}"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><input type="hidden" name="model_type" value="transaction_categorization"><button class="btn btn-outline-light btn-sm" type="submit">Train / refresh categorizer</button><label class="small"><input class="form-check-input me-1" type="checkbox" name="force_refresh" value="1"> Force retrain</label></form>
+    {% if suggestion %}<div class="alert alert-info mt-3"><strong>Suggested: {{ suggestion.predicted_category }}</strong> · {{ suggestion.transaction_type|title }} · confidence score {{ (suggestion.confidence * 100)|round(1) }}%<div class="small">{{ suggestion.model_name }}. Confidence is a model score, not a guaranteed probability.</div>{% if suggestion.alternatives %}<div class="small mt-2">Alternatives: {% for alternative in suggestion.alternatives[:5] %}{{ alternative.category }} ({{ (alternative.score * 100)|round(1) }}%){% if not loop.last %} · {% endif %}{% endfor %}</div>{% endif %}
+      {% if suggestion_choices %}<form class="d-flex flex-wrap gap-2 mt-3" method="post" action="{{ url_for('ml.accept_category', transaction_id=suggestion.transaction_id) }}"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><label class="visually-hidden" for="suggestion-category">Category to apply</label><select id="suggestion-category" class="form-select form-select-sm w-auto" name="category_id" required>{% for category in suggestion_choices %}<option value="{{ category.id }}" {% if category.name == suggestion.predicted_category %}selected{% endif %}>{{ category.name }}</option>{% endfor %}</select><button class="btn btn-success btn-sm" type="submit">Accept selected</button></form>{% else %}<p class="small mb-0 mt-2">No compatible owned category is available to apply this suggestion.</p>{% endif %}
+      <form class="mt-2" method="post" action="{{ url_for('ml.reject_category', transaction_id=suggestion.transaction_id) }}"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="btn btn-link btn-sm px-0" type="submit">Reject suggestion</button></form>
+    </div>{% endif %}
+    {% if recent_transactions %}<div class="table-responsive mt-3"><table class="table table-dark table-sm align-middle"><thead><tr><th>Date</th><th>Type</th><th>Current category</th><th class="text-end">Amount</th><th></th></tr></thead><tbody>{% for transaction in recent_transactions %}<tr><td>{{ transaction.transaction_date }}</td><td>{{ transaction.transaction_type|title }}</td><td>{{ transaction.category }}</td><td class="text-end">{{ transaction.amount|money(currency) }}</td><td><form method="post" action="{{ url_for('ml.suggest_category', transaction_id=transaction.id) }}"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="btn btn-outline-light btn-sm" type="submit">Suggest</button></form></td></tr>{% endfor %}</tbody></table></div>{% else %}<div class="empty-state">Add transactions to request category suggestions.</div>{% endif %}
+  </section></div>
+
+  <div class="col-12 col-xl-5"><section class="panel h-100"><h2 class="h5">Unusual spending for review</h2><p class="small text-secondary">Reuses the existing analytics methods. These are review prompts, not fraud findings.</p>
+    <div class="small text-secondary mb-3">Statistical analysis: {{ anomaly_methods.get('statistical', {}).get('status', 'unavailable')|replace('_', ' ') }} · Isolation Forest: {{ anomaly_methods.get('isolation_forest', {}).get('status', 'unavailable')|replace('_', ' ') }}</div>
+    {% if anomalies %}<div class="table-responsive"><table class="table table-dark table-sm"><thead><tr><th>Date</th><th>Category</th><th class="text-end">Amount</th></tr></thead><tbody>{% for anomaly in anomalies %}<tr><td>{{ anomaly.date }}</td><td>{{ anomaly.category }}</td><td class="text-end">{{ anomaly.amount|money(currency) }}</td></tr>{% endfor %}</tbody></table></div>{% else %}<div class="empty-state">No unusual spending was flagged, or more history is needed.</div>{% endif %}
+  </section></div>
+</div>
+
+<script id="ml-chart-data" type="application/json">{{ chart|tojson }}</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+<script src="{{ url_for('static', filename='js/ml_dashboard.js') }}" defer></script>
+{% endblock %}

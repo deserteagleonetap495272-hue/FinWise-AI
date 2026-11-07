@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <title>{% block title %}FinWise AI{% endblock %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/finwise.css') }}" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark border-bottom border-secondary-subtle">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="{{ url_for('web.index') }}">FinWise <span>AI</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#finwise-navbar" aria-controls="finwise-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="finwise-navbar">
+      <div class="d-flex flex-column flex-lg-row align-items-lg-center gap-2 gap-lg-3 ms-lg-auto pt-3 pt-lg-0">
+        {% if current_user.is_authenticated %}
+          <a class="nav-link" href="{{ url_for('web.dashboard') }}">Dashboard</a>
+          <a class="nav-link" href="{{ url_for('transactions.list_transactions') }}">Transactions</a>
+          <a class="nav-link" href="{{ url_for('budgets.list_budgets') }}">Budgets</a>
+          <a class="nav-link" href="{{ url_for('savings.list_goals') }}">Savings goals</a>
+          <a class="nav-link" href="{{ url_for('analytics.overview') }}">Analytics</a>
+          <a class="nav-link" href="{{ url_for('ml.dashboard') }}">ML insights</a>
+          <form method="post" action="{{ url_for('web.logout') }}" class="m-0">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <button class="btn btn-outline-light btn-sm" type="submit">Log out</button>
+          </form>
+        {% else %}
+          <a class="nav-link" href="{{ url_for('web.login') }}">Log in</a>
+          <a class="btn btn-success btn-sm" href="{{ url_for('web.register') }}">Create account</a>
+        {% endif %}
+      </div>
+      </div>
+    </div>
+  </nav>
+  <main class="container py-5">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}
+        <div class="alert alert-{{ 'danger' if category == 'error' else category }}" role="alert">{{ message }}</div>
+      {% endfor %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+</body>
+</html>

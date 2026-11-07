@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Dashboard | FinWise AI{% endblock %}
+{% block content %}
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+  <div><p class="eyebrow mb-2">YOUR FINANCIAL OVERVIEW</p><h1 class="h2 mb-0">Welcome, {{ current_user.full_name|e }}</h1></div>
+  <div class="d-flex gap-2"><a class="btn btn-success" href="{{ url_for('transactions.new_transaction', type='income') }}">+ Add income</a><a class="btn btn-outline-light" href="{{ url_for('transactions.new_transaction', type='expense') }}">− Add expense</a></div>
+</div>
+<div class="row g-3 mb-4">
+  <div class="col-12 col-sm-6 col-xl-3"><div class="stat-card"><p>Total balance</p><strong>{{ summary.balance|money(current_user.currency) }}</strong></div></div>
+  <div class="col-12 col-sm-6 col-xl-3"><div class="stat-card"><p>Total income</p><strong>{{ summary.total_income|money(current_user.currency) }}</strong></div></div>
+  <div class="col-12 col-sm-6 col-xl-3"><div class="stat-card"><p>Total expenses</p><strong>{{ summary.total_expenses|money(current_user.currency) }}</strong></div></div>
+  <div class="col-12 col-sm-6 col-xl-3"><div class="stat-card"><p>Monthly savings</p><strong>{{ summary.monthly_savings|money(current_user.currency) }}</strong></div></div>
+</div>
+<div class="row g-3 mb-4">
+  <div class="col-12 col-xl-6"><section class="panel h-100"><h2 class="h6">Income vs expenses · this month</h2><div class="chart-wrap"><canvas id="income-expenses-chart" aria-label="This month income compared with expenses"></canvas></div></section></div>
+  <div class="col-12 col-xl-6"><section class="panel h-100"><h2 class="h6">Monthly spending trend</h2><div class="chart-wrap"><canvas id="spending-trend-chart" aria-label="Monthly income and spending trend"></canvas></div></section></div>
+  <div class="col-12"><section class="panel"><h2 class="h6">Expense categories · this month</h2>
+    {% if summary.category_labels %}<div class="category-chart-wrap"><canvas id="category-chart" aria-label="Expense totals by category"></canvas></div>
+    {% else %}<div class="empty-state">No expenses recorded this month yet. Once you add transactions, category totals will appear here.</div>{% endif %}
+  </section></div>
+</div>
+<section class="panel">
+  <div class="d-flex justify-content-between align-items-center mb-3"><h2 class="h5 mb-0">Recent transactions</h2><a href="{{ url_for('transactions.list_transactions') }}">View all</a></div>
+  {% if transactions %}
+    <div class="table-responsive"><table class="table table-dark table-hover align-middle mb-0"><thead><tr><th>Date</th><th>Description</th><th>Category</th><th>Type</th><th class="text-end">Amount</th></tr></thead><tbody>
+    {% for transaction in transactions %}<tr><td>{{ transaction.transaction_date.strftime('%d %b %Y') }}</td><td>{{ transaction.description }}</td><td>{{ transaction.category.name }}</td><td><span class="badge {{ 'text-bg-success' if transaction.transaction_type == 'income' else 'text-bg-secondary' }}">{{ transaction.transaction_type|title }}</span></td><td class="text-end {{ 'positive' if transaction.transaction_type == 'income' else '' }}">{{ transaction.amount|money(current_user.currency) }}</td></tr>{% endfor %}
+    </tbody></table></div>
+  {% else %}<div class="empty-state">No transactions yet. Add your first income or expense to start your overview.</div>{% endif %}
+</section>
+<div class="d-flex justify-content-between align-items-center mt-5 mb-3"><div><p class="eyebrow mb-2">PLAN YOUR SPENDING</p><h2 class="h3 mb-0">Budget summary</h2></div><a class="btn btn-outline-light" href="{{ url_for('budgets.list_budgets') }}">View budgets</a></div>
+<div class="row g-3 mb-4">
+  <div class="col-6 col-xl-3"><div class="stat-card"><p>Allocated · active</p><strong>{{ budgets.allocated|money(current_user.currency) }}</strong></div></div>
+  <div class="col-6 col-xl-3"><div class="stat-card"><p>Spent · active</p><strong>{{ budgets.spent|money(current_user.currency) }}</strong></div></div>
+  <div class="col-6 col-xl-3"><div class="stat-card"><p>Remaining · active</p><strong>{{ budgets.remaining|money(current_user.currency) }}</strong></div></div>
+  <div class="col-6 col-xl-3"><div class="stat-card"><p>Overspent budgets</p><strong>{{ budgets.overspent_count }}</strong></div></div>
+</div>
+<div class="row g-3 mb-4"><div class="col-12 col-xl-6"><section class="panel h-100"><h3 class="h6">Budget vs actual spending</h3>{% if budgets.entries %}<div class="chart-wrap"><canvas id="budget-chart" aria-label="Active budget amounts compared with spending"></canvas></div>{% else %}<div class="empty-state">Create an active budget to see allocated amounts and spending here.</div>{% endif %}</section></div><div class="col-12 col-xl-6"><section class="panel h-100"><h3 class="h6">Budget utilization</h3>{% if budgets.entries %}<div class="chart-wrap"><canvas id="budget-utilization-chart" aria-label="Budget utilization by category"></canvas></div>{% else %}<div class="empty-state">No active budgets to compare yet.</div>{% endif %}</section></div></div>
+{% if budgets.nearing_limit %}<section class="panel mb-4"><h3 class="h6">Categories nearing their limits</h3><div class="d-flex flex-wrap gap-2">{% for entry in budgets.nearing_limit %}<span class="badge status-{{ entry.status }}">{{ entry.budget.category.name }} · {{ entry.usage|round(1) }}%</span>{% endfor %}</div></section>{% endif %}
+<div class="d-flex justify-content-between align-items-center mt-5 mb-3"><div><p class="eyebrow mb-2">SAVE TOWARD YOUR GOALS</p><h2 class="h3 mb-0">Savings summary</h2></div><a class="btn btn-outline-light" href="{{ url_for('savings.list_goals') }}">View goals</a></div>
+<div class="row g-3 mb-4"><div class="col-6 col-xl-3"><div class="stat-card"><p>Total targets</p><strong>{{ savings.targets|money(current_user.currency) }}</strong></div></div><div class="col-6 col-xl-3"><div class="stat-card"><p>Total saved</p><strong>{{ savings.saved|money(current_user.currency) }}</strong></div></div><div class="col-6 col-xl-3"><div class="stat-card"><p>Remaining to goals</p><strong>{{ savings.remaining|money(current_user.currency) }}</strong></div></div><div class="col-6 col-xl-3"><div class="stat-card"><p>Completed · active goals</p><strong>{{ savings.completed_count }} · {{ savings.active_count }}</strong></div></div></div>
+<section class="panel mb-4"><h3 class="h6">Savings goal progress</h3>{% if savings.entries %}<div class="chart-wrap"><canvas id="savings-chart" aria-label="Saved amounts compared with savings targets"></canvas></div>{% else %}<div class="empty-state">Create a savings goal and record contributions to see progress here.</div>{% endif %}</section>
+<script id="dashboard-chart-data" type="application/json">{{ {"monthly_income": summary.monthly_income|string, "monthly_expenses": summary.monthly_expenses|string, "labels": summary.trend_labels, "trend_income": summary.trend_income, "trend_expenses": summary.trend_expenses, "category_labels": summary.category_labels, "category_values": summary.category_values, "currency": current_user.currency, "budget_names": budgets.entries|map(attribute='budget.name')|list, "budget_amounts": budgets.entries|map(attribute='budget.amount')|map('string')|list, "budget_spent": budgets.entries|map(attribute='spent')|map('string')|list, "budget_utilization": budgets.entries|map(attribute='usage')|map('string')|list, "savings_names": savings.entries|map(attribute='goal.name')|list, "savings_targets": savings.entries|map(attribute='goal.target_amount')|map('string')|list, "savings_saved": savings.entries|map(attribute='saved')|map('string')|list}|tojson }}</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+<script src="{{ url_for('static', filename='js/dashboard.js') }}" defer></script>
+{% endblock %}

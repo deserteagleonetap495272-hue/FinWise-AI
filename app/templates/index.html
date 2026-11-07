@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}FinWise AI | Personal finance, made clearer{% endblock %}
+{% block content %}
+<section class="hero-card p-4 p-lg-5 rounded-4">
+  <p class="eyebrow">PERSONAL FINANCE, WITH CLARITY</p>
+  <h1 class="display-5 fw-semibold mb-3">Make your money work<br>with more intention.</h1>
+  <p class="lead text-secondary mb-4">A private place to understand your finances and build better habits.</p>
+  <a class="btn btn-success btn-lg" href="{{ url_for('web.register') }}">Create your account</a>
+  <p class="small text-secondary mt-3 mb-0">Already with us? <a href="{{ url_for('web.login') }}">Log in</a></p>
+</section>
+{% endblock %}
